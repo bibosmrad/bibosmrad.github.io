@@ -9,11 +9,10 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Laura" />
     <meta name="description" content="Hrvatska Wordle tražilica" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#6aaa67" />
+    <meta name="msapplication-TileColor" content="#6aaa67" />
     <meta property="og:title" content="Hrvatska Wordle tražilica" />
     <meta property="og:description" content="Hrvatska Wordle tražilica" />
-    <meta property="og:image" content="(custom)" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Hrvatska Wordle tražilica" />
     <meta property="og:locale" content="hr_HR" />
@@ -24,21 +23,30 @@
       integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header></header>
     <main>
-      <section class="hero">
+      <section class="hero pt-md pb-md">
         <div class="container">
-          <h1>Hrvatska Wordle tražilica</h1>
-          <p>Ova tražilica pomaže u pronalaženju riječi za igru Wordle.</p>
+          <h1>
+            Hrvatska <br />
+            Wordle <br />
+            tražilica
+          </h1>
         </div>
       </section>
 
-      <section class="search">
+      <section class="search pb-md">
         <div class="container">
           <div class="row">
-            <div class="md:col-6 col-12">
+            <div class="md:col-6 col-12 pt-md">
               <form>
                 <div class="correct-letters">
                   <p class="mb-xs pb-0">Točna slova na točnom mjestu</p>
@@ -176,7 +184,7 @@
                 </div>
               </form>
             </div>
-            <div class="md:col-6 col-12">
+            <div class="md:col-6 col-12 pt-md">
               <h2 class="as-h4">Ponuđene riječi:</h2>
               <ul class="results-list"></ul>
             </div>

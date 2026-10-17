@@ -54,6 +54,14 @@ async function loadWords() {
   }
 }
 
+function addInputColor(input) {
+  input.classList.add("has-content");
+}
+
+function removeInputColor(input) {
+  input.classList.remove("has-content");
+}
+
 function initRestrictNonLetters() {
   const inputRows = document.querySelectorAll(".input-row");
   inputRows.forEach((row) => {
@@ -83,6 +91,8 @@ function restrictNonLetters(input, index, letterInputs) {
   const isAbsent = input.closest(".absent-letters") !== null;
 
   input.addEventListener("input", function () {
+    addInputColor(this);
+
     let value = this.value.replace(/[^\p{L}]/gu, "").toLocaleUpperCase("hr");
 
     // Absent letters: allow a digraph in one box
@@ -166,9 +176,12 @@ function restrictNonLetters(input, index, letterInputs) {
       return;
     }
 
-    if (event.key === "Backspace" && this.value === "" && index > 0) {
-      letterInputs[index - 1].value = "";
-      letterInputs[index - 1].focus();
+    if (event.key === "Backspace" && this.value === "") {
+      removeInputColor(this);
+      if (index > 0) {
+        letterInputs[index - 1].value = "";
+        letterInputs[index - 1].focus();
+      }
     }
   });
 }
