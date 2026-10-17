@@ -1,0 +1,530 @@
+/* KORIŠTENE CLAMP VRIJEDNOSTI SU MIN 768PX - MAX 1500PX ŠIRINE EKRANA */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../font/Roboto.woff2") format("woff2");
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  font-display: block;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../font/Roboto-Italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  font-display: block;
+  font-style: italic;
+}
+
+/* Default */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  text-shadow: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  font-family: sans-serif;
+  font-size: 16px; /* base font size */
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: none;
+}
+
+@media (min-width: 2048px) {
+  html {
+    font-size: 0.78125vw;
+  }
+}
+
+/* Color and spacing variables*/
+:root {
+  --white: #ffffff;
+  --grey: #787d7d;
+  --black: #000000;
+  --yellow: #c9b459;
+  --green: #6aaa67;
+
+  --spacing-xxs: clamp(0.25rem, -0.0123rem + 0.5464vw, 0.5rem);
+  --spacing-xs: clamp(0.5rem, -0.0246rem + 1.0929vw, 1rem);
+  --spacing-sm: clamp(1rem, -0.0492rem + 2.1858vw, 2rem);
+  --spacing-md: clamp(2rem, -0.0984rem + 4.3716vw, 4rem);
+  --spacing-lg: clamp(4rem, -0.1967rem + 8.7432vw, 8rem);
+  --spacing-xl: clamp(8rem, 1.7049rem + 13.1148vw, 14rem);
+}
+
+body {
+  margin: 0;
+  background-color: var(--green);
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.as-h1,
+.as-h2,
+.as-h3,
+.as-h4,
+.as-h5,
+.as-h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.125;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h1,
+.as-h1 {
+  font-size: clamp(2.25rem, 1.4631rem + 1.6393vw, 3rem);
+}
+
+h2,
+.as-h2 {
+  font-size: clamp(1.75rem, 1.2254rem + 1.0929vw, 2.25rem);
+}
+
+h3,
+.as-h3 {
+  font-size: clamp(1.5rem, 1.2377rem + 0.5464vw, 1.75rem);
+}
+
+h4,
+.as-h4 {
+  font-size: clamp(1.125rem, 0.7316rem + 0.8197vw, 1.5rem);
+}
+
+h5,
+.as-h5 {
+  font-size: clamp(1rem, 0.8689rem + 0.2732vw, 1.125rem);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+.small-xs {
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+small,
+.small {
+  font-size: 0.875rem;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.big {
+  font-size: 1.125rem;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  display: inline-block;
+}
+
+blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+ol {
+  counter-reset: section;
+  list-style: none;
+  padding-inline-start: 0;
+  position: relative;
+  padding-left: 0;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+ol li {
+  position: relative;
+  padding-left: 1.5rem;
+  counter-increment: section;
+  margin-bottom: 0.5rem;
+}
+
+ol li::before {
+  content: counters(section, ".") ". ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--black);
+  width: 1.5rem;
+}
+
+ol ol li {
+  padding-left: 2.5rem;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  padding-bottom: 0;
+  list-style-type: none;
+  line-height: 1.5;
+}
+
+ul li {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75rem;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25rem;
+}
+
+sup {
+  top: -0.5rem;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: var(--bs-secondary-color);
+  text-align: left;
+}
+
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+label {
+  display: inline-block;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Provjerit webkit appearance za iphone */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+}
+
+select:disabled {
+  opacity: 1;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/* Buttons */
+.btn-solid,
+.btn-ghost,
+.btn-plus {
+  line-height: 1;
+  transition: 0.2s ease;
+}
+
+.btn-solid {
+  border: 0.063rem solid var(--white);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 0.625rem 1.25rem 0.688rem 1.25rem;
+}
+
+.btn-solid:hover {
+  background-color: transparent;
+  color: var(--white);
+}
+
+.btn-ghost {
+  border: 0.063rem solid var(--white);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.625rem 1.25rem 0.688rem 1.25rem;
+}
+
+.btn-ghost:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.btn-plus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--white);
+  font-weight: 500;
+}
+
+.btn-plus:hover {
+  opacity: 0.75;
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+.full-width-responsive {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .full-width-responsive {
+    width: initial;
+    text-align: initial;
+  }
+}
+
+/* Helper klase */
+.m-0 {
+  margin: 0;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.mt-xxs {
+  margin-top: var(--spacing-xxs);
+}
+.mt-xs {
+  margin-top: var(--spacing-xs);
+}
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-xxs {
+  margin-bottom: var(--spacing-xxs);
+}
+.mb-xs {
+  margin-bottom: var(--spacing-xs);
+}
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.p-0 {
+  padding: 0;
+}
+.pt-0 {
+  padding-top: 0;
+}
+.pt-xxs {
+  padding-top: var(--spacing-xxs);
+}
+.pt-xs {
+  padding-top: var(--spacing-xs);
+}
+.pt-sm {
+  padding-top: var(--spacing-sm);
+}
+.pt-md {
+  padding-top: var(--spacing-md);
+}
+.pt-lg {
+  padding-top: var(--spacing-lg);
+}
+.pb-0 {
+  padding-bottom: 0;
+}
+.pb-xxs {
+  padding-bottom: var(--spacing-xxs);
+}
+.pb-xs {
+  padding-bottom: var(--spacing-xs);
+}
+.pb-sm {
+  padding-bottom: var(--spacing-sm);
+}
+.pb-md {
+  padding-bottom: var(--spacing-md);
+}
+.pb-lg {
+  padding-bottom: var(--spacing-lg);
+}
+/* END OF BASE CSS */
+
+.correct-letters,
+.misplaced-letters,
+.absent-letters {
+  max-width: clamp(16rem, 12.066rem + 8.197vw, 19.75rem);
+}
+.correct-letters p,
+.misplaced-letters p,
+.absent-letters p {
+  font-size: 1.125rem;
+}
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.25rem;
+}
+.letter-input {
+  color: var(--black);
+  font-size: clamp(2rem, 1.475rem + 1.093vw, 2.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  caret-color: transparent;
+
+  width: 1.5em;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  text-align: center;
+}
+.misplaced-letters .input-row:where(:not(:last-of-type)) {
+  padding-bottom: 0.25rem;
+}
+.absent-letters .letter-input {
+  font-size: clamp(1.188rem, 0.861rem + 0.682vw, 1.5rem);
+}
+.absent-letters .input-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.188rem;
+}
+.results-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
+}
+.results-list li {
+  padding: 0.5rem 0.875rem;
+  border: 0.0625rem solid var(--black);
+}
